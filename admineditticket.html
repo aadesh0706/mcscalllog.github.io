@@ -1,6 +1,20 @@
-<?php
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title>Microcare Call Log System</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+	
+	<script>
+		<?php
 
-include_once('DBConfig.php');
+include_once('DBConfig.html');
 
 if(isset($_POST['id']))
 {
@@ -56,7 +70,7 @@ if(isset($_POST['submit']))
 	{
 		$sql="UPDATE tblgenerateticket SET productname='$productname',customername='$customername',customermobno='$customermobno',problemdetails='$problemdetails',solutiondetails='$solutiondetails' WHERE ticketid=$id";
 	    mysqli_query($mysqli,$sql);
-		header("Location: adminmanageticket.php");
+		header("Location: adminmanageticket.html");
 	}	
 }
 ?>
@@ -77,18 +91,7 @@ while($res = mysqli_fetch_array($result))
 	$solutiondetails = $res['solutiondetails'];
 }
 ?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<head>
-    <title>Microcare Call Log System</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <script src="js/jquery-3.2.1.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-</head>
-<body>
+	</script>
     <header>
         <div class="jumbotron text-center" style="margin-bottom: 0">
             <h1>Microcare Call Log System</h1>
@@ -106,7 +109,7 @@ while($res = mysqli_fetch_array($result))
                         <a class="nav-link" href="adminmanageticket.php">Manage Ticket</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php">Logout</a>
+                        <a class="nav-link" href="login.html">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -118,7 +121,7 @@ while($res = mysqli_fetch_array($result))
             <div class="col-sm-8 order-sm-2">
                 <h2>Generate Ticket</h2>
                 <div style="border:groove; padding:10px; margin-bottom:10px;">
-                <form method="POST" action="admineditticket.php">
+                <form method="POST" action="admineditticket.html">
                     <select name="productname" required="" class="form-group form-control">
                         <option value="" <?php if($productname == "") echo "selected"; ?>>Select Product</option>
                         <option value="Billing Software" <?php if($productname == "Billing Software") echo "selected"; ?>>Billing Software</option>
@@ -156,13 +159,13 @@ while($res = mysqli_fetch_array($result))
                 <p>Important Links</p>
                 <ul class="nav nav-pills flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="login.php">Office Login</a>
+                        <a class="nav-link active" href="login.html">Office Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="generateticket.php">Generate Ticket</a>
+                        <a class="nav-link" href="index.html">Generate Ticket</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="viewticket.php">View Ticket</a>
+                        <a class="nav-link" href="viewticket.html">View Ticket</a>
                     </li>
                 </ul>
                 <hr class="d-sm-none">

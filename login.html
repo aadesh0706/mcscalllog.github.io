@@ -33,12 +33,12 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Call Log
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="generateticket.php">Generate Ticket</a>
-                            <a class="dropdown-item" href="viewticket.php">View Ticket</a>
+                            <a class="dropdown-item" href="index.html">Generate Ticket</a>
+                            <a class="dropdown-item" href="viewticket.html">View Ticket</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php">Office Login</a>
+                        <a class="nav-link" href="login.html">Office Login</a>
                     </li>
                 </ul>
             </div>
@@ -50,14 +50,14 @@
             <div class="col-sm-8 order-sm-2">
                 <h2>Office Login</h2>
                 <div style="border:groove; padding:10px; margin-bottom:10px;">
-                <form method="POST" action="login.php">
+                <form method="POST" action="login.html">
                     <input type="text" name="username" class="form-group form-control" placeholder="Enter your user name" required=""/>
                     <input type="password" name="upassword" class="form-group form-control" placeholder="Enter your password" required=""/>
                     <input type="submit" class="btn btn-primary" 
 					 name="officelogin" value="LOGIN"/>
                 </form>				
 				<?php
-include_once("DBConfig.php");
+include_once("DBConfig.html");
 
 if(isset($_POST['officelogin']))
 {
@@ -73,7 +73,7 @@ $upassword = $_POST['upassword'];
 
 if($username=="admin" and $upassword=="admin")
 {
-header("Location: adminmanageticket.php");
+header("Location: adminmanageticket.html");
 }
 else{
 echo "Invalid username or password.";
@@ -96,13 +96,13 @@ else
                 <p>Important Links</p>
                 <ul class="nav nav-pills flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="login.php">Office Login</a>
+                        <a class="nav-link active" href="login.html">Office Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="generateticket.php">Generate Ticket</a>
+                        <a class="nav-link" href="index.html">Generate Ticket</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="viewticket.php">View Ticket</a>
+                        <a class="nav-link" href="viewticket.html">View Ticket</a>
                     </li>
                 </ul>
                 <hr class="d-sm-none">

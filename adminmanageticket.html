@@ -1,8 +1,3 @@
- <?php
-include_once("DBConfig.php");
-
-$result = mysqli_query($mysqli, "SELECT * FROM tblgenerateticket"); 
-?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
@@ -15,6 +10,13 @@ $result = mysqli_query($mysqli, "SELECT * FROM tblgenerateticket");
     <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
+	<script>
+		<?php
+include_once("DBConfig.html");
+
+$result = mysqli_query($mysqli, "SELECT * FROM tblgenerateticket"); 
+?>
+	</script>
     <header>
         <div class="jumbotron text-center" style="margin-bottom: 0">
             <h1>ADMIN PANEL - Microcare Call Log System</h1>
@@ -29,10 +31,10 @@ $result = mysqli_query($mysqli, "SELECT * FROM tblgenerateticket");
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
 					<li class="nav-item">
-                        <a class="nav-link" href="adminmanageticket.php">Manage Ticket</a>
+                        <a class="nav-link" href="adminmanageticket.html">Manage Ticket</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php">Logout</a>
+                        <a class="nav-link" href="login.html">Logout</a>
                     </li>
                 </ul>
             </div>
